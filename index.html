@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Highcharts-accessible : This plugin improves accessibility of the graphs rendered by Highcharts.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Highcharts-accessible</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/seth-myers/highcharts-accessible">View on GitHub</a>
+
+          <h1 id="project_title">Highcharts-accessible</h1>
+          <h2 id="project_tagline">This plugin improves accessibility of the graphs rendered by Highcharts.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/seth-myers/highcharts-accessible/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/seth-myers/highcharts-accessible/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="highcharts-accessible-access" class="anchor" href="#highcharts-accessible-access" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>highcharts-accessible (access)</h1>
+
+<p>This plugin improves accessibility of the graphs rendered by Highcharts.</p>
+
+<h2>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h2>
+
+<p>"Inclusive design is good design."  </p>
+
+<p>Access improves the accessibility of Highcharts' graphs by automatically applying three separate best practices to creating SVG charts. </p>
+
+<h4>
+<a id="1-svg-title-and-description-tags" class="anchor" href="#1-svg-title-and-description-tags" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. SVG Title and Description Tags</h4>
+
+<p>Access highjacks these tags two tags in the rendered SVG and adds informative text that describes what the graph is showing. Developers have the option of inserting their own custom text, or allowing the plugin to write the key-takeaways from the chart. Its important that an automated option exists, or it will be easy for web developers to overlook this crucial step.</p>
+
+<h4>
+<a id="2-aria" class="anchor" href="#2-aria" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. ARIA</h4>
+
+<p>ARIA attributes are inserted into the SVG to further optimize the chart for screen readers.</p>
+
+<h4>
+<a id="3-csv" class="anchor" href="#3-csv" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. CSV</h4>
+
+<p>A link to a downloadable CSV file containing all the data is inserted after the chart. This gives visually-impaired users the same opportunity to access all the data, and do a 'deep-dive' if they want.</p>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>tktktkt</p>
+
+<h2>
+<a id="background" class="anchor" href="#background" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Background</h2>
+
+<p>The vast majority of charts on the web are not accessible to the visually impaired. I believe the problem stems from the fundamental purpose of a chart, which is to quickly and concisely explain trends in data that would be hard to do with words. So, how do we put into words something that was specifically created to avoid them?</p>
+
+<p>A common solution is to add a CSV file or insert a table of all the data displayed in the chart. This does give all users the same opportunity to access the information, but it misses the goal of making a chart in the first place. Visually-impaired users have to download a CSV file, sift through all the data, and draw their own conclusions about what it means while sighted-users can simply glance at the visualization. </p>
+
+<p>Instead of simply repeating all the data in a chart, this plugin attempts to summarize the key points the chart is likely to make, thereby doing a better job of aligning the accessibility feature with the actual purpose of making the visualization. </p>
+
+<p>In addition, the plugin can generate the description text itself. Having a person actually write the text would be best, but this fallback ensures all charts will have some amount of accessibility. </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Highcharts-accessible maintained by <a href="https://github.com/seth-myers">seth-myers</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
