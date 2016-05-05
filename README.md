@@ -1,5 +1,5 @@
 # highcharts-accessible (access)
-This plugin improves accessibility of the graphs rendered by Highcharts.
+This plugin improves accessibility of the graphs rendered by Highcharts.  
 Documentation is here: http://seth-myers.github.io/highcharts-accessible/
 
 ## About
