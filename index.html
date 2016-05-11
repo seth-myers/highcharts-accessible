@@ -34,45 +34,108 @@
         <h1>
 <a id="highcharts-accessible" class="anchor" href="#highcharts-accessible" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>highcharts-accessible</h1>
 
-<p>This plugin improves accessibility of the graphs rendered by Highcharts.</p>
+<p>This plugin improves accessibility of the graphs rendered by Highcharts.<br>
+Full documenation at <a href="http://seth-myers.github.io/highcharts-accessible/">http://seth-myers.github.io/highcharts-accessible/</a></p>
 
 <h2>
 <a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h2>
 
-<p>"Inclusive design is good design."  </p>
+<p>It works by automatically applying three best practices for accessible SVGs.</p>
 
-<p>This works by automatically applying three best practices to creating inclusive SVGs. </p>
+<ol>
+<li>Automatically creates and inserts intelligent title and description tags.
 
-<h4>
-<a id="1-svg-title-and-description-tags" class="anchor" href="#1-svg-title-and-description-tags" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. SVG Title and Description Tags</h4>
+<ul>
+<li>The plugin highjacks these tags two tags in the rendered SVG and adds informative text that describes what the graph is showing. Developers have the option of inserting their own custom text, or allowing the plugin to write the key-takeaways from the chart. Its important that an automated option exists, or it will be easy for web developers to overlook this crucial step.<br>
+</li>
+</ul>
+</li>
+<li>Inserts ARIA attributes and language definition in the SVG to further optimize the chart for screen readers<br>
+</li>
+<li>Automatically inserts a link to a downloadable CSV of the data.<br>
 
-<p>Access highjacks these tags two tags in the rendered SVG and adds informative text that describes what the graph is showing. Developers have the option of inserting their own custom text, or allowing the plugin to write the key-takeaways from the chart. Its important that an automated option exists, or it will be easy for web developers to overlook this crucial step.</p>
+<ul>
+<li>A link to a downloadable CSV file containing all the data is inserted after the chart. This gives visually-impaired users the same opportunity to access all the data, and do a 'deep-dive' if they want.</li>
+</ul>
+</li>
+</ol>
 
-<h4>
-<a id="2-aria" class="anchor" href="#2-aria" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. ARIA</h4>
+<p>Highchart SVG rendered <strong>without</strong> the plugin:
+<img src="https://github.com/seth-myers/highcharts-accessible/blob/gh-pages/images/without.png" alt="alt text" title="Highchart SVG rendered without the plugin"></p>
 
-<p>ARIA attributes are inserted into the SVG to further optimize the chart for screen readers.</p>
-
-<h4>
-<a id="3-csv" class="anchor" href="#3-csv" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. CSV</h4>
-
-<p>A link to a downloadable CSV file containing all the data is inserted after the chart. This gives visually-impaired users the same opportunity to access all the data, and do a 'deep-dive' if they want.</p>
+<p>Highchart SVG rendered <strong>with</strong> the plugin:
+<img src="https://github.com/seth-myers/highcharts-accessible/blob/gh-pages/images/with.png" alt="alt text" title="https://github.com/seth-myers/highcharts-accessible/blob/gh-pages/images/with.png"></p>
 
 <h2>
-<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+<a id="dependency" class="anchor" href="#dependency" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependency</h2>
 
-<p>tktktkt</p>
+<p>Include the <a href="http://www.highcharts.com/plugin-registry/single/7/Export%20Data" title="export-csv.js download page">export-csv.js</a> plugin to enable the CSV functionality.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Import this plugin after <code>highcharts.js</code> and <code>export-csv.js</code>, like this:</p>
+
+<pre><code>&lt;script type="text/javascript" src="http://code.highcharts.com/highcharts.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="export-csv.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="highcharts-accessible.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>All parameters are optional, but <code>accessible settings: {}</code> must be called in order to run the plugin.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#container<span class="pl-pds">"</span></span>).<span class="pl-en">highcharts</span>({  
+  accessibleSettings<span class="pl-k">:</span> {  </pre></div>
+
+<blockquote>
+<p><strong>autoAccessible: Boolean</strong><br>
+Allow a summary of the chart to be written automatically. This is the primary purpose of the plugin. If set to false, a user-defined title and description must be provided. Defaults to <code>true</code>.  </p>
+
+<p><strong>csvLinkText: String</strong><br>
+Text used in link to download a CSV file. If you have more than one highchart SVG on a page, it is important to add text that helps users associate the link with the chart. Defaults to “Download chart data.”.</p>
+
+<p><strong>langAttribute: String</strong><br>
+Change the language attribute for the SVG. <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xml:lang" title="Mozilla SVG lang">More information</a> on lang attribute. Defaults to “en” for English.  </p>
+
+<p><strong>timeSeries:Boolean</strong><br>
+Indicate if the dataset has a time element. This affects how the autoAccessible feature process the text. Defaults to <code>true</code>.  </p>
+
+<p><strong>userDesc: String</strong><br>
+Text to be used in the SVG’s description tag. This will override the autoAccessible feature. I recommend using this option and writing your own summary of what the chart shows. It will likely be more readable than what the autoAccessible script can generate. Defaults to <code>null</code>.  </p>
+
+<p><strong>userTitle: String</strong><br>
+Text to be used in the SVG’s title tag. If this is tag is not used, access will use the text in highchart’s title.text in the SVG title tag. If that is empty, it defaults to "This is a data visualization. Please see the following description tag for a synopsis of what it shows.".  </p>
+
+<p><strong>xUnitPrefix: String</strong><br>
+Text to prepend to the x value in the description tag. Defaults to empty string.</p>
+
+<p><strong>xUnitSuffix: String</strong><br>
+Text to append to the x value in the description tag. Defaults to empty string.</p>
+
+<p><strong>yUnitPrefix: String</strong><br>
+Text to prepend to the y value in the description tag. Defaults to empty string.</p>
+
+<p><strong>yUnitSuffix: String</strong><br>
+Text to append to the y value in the description tag. Defaults to empty string.</p>
+</blockquote>
+
+<div class="highlight highlight-source-js"><pre>  }  
+});  </pre></div>
 
 <h2>
 <a id="background" class="anchor" href="#background" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Background</h2>
 
 <p>The vast majority of charts on the web are not accessible to the visually impaired. I believe the problem stems from the fundamental purpose of a chart, which is to quickly and concisely explain trends in data that would be hard to do with words. So, how do we put into words something that was specifically created to avoid them?</p>
 
-<p>A common solution is to add a CSV file or insert a table of all the data displayed in the chart. This does give all users the same opportunity to access the information, but it misses the goal of making a chart in the first place. Visually-impaired users have to download a CSV file, sift through all the data, and draw their own conclusions about what it means while sighted-users can simply glance at the visualization. </p>
+<p>A common solution is to add a CSV file or insert a table of all the data displayed in the chart. This does give all users the same opportunity to access the information, but it misses the goal of making a chart in the first place. Visually-impaired users have to download a CSV file, sift through all the data, and draw their own conclusions about what it means while sighted-users can simply glance at the visualization.</p>
 
-<p>Instead of simply repeating all the data in a chart, this plugin attempts to summarize the key points the chart is likely to make, thereby doing a better job of aligning the accessibility feature with the actual purpose of making the visualization. </p>
+<p>Instead of simply repeating all the data in a chart, this plugin attempts to summarize the key points the chart is likely to make, thereby doing a better job of aligning the accessibility feature with the actual purpose of making the visualization.</p>
 
-<p>In addition, the plugin can generate the description text itself. Having a person actually write the text would be best, but this fallback ensures all charts will have some amount of accessibility. </p>
+<p>In addition, the plugin can generate the description text itself. Having a person actually write the text would be best, but this fallback ensures all charts will have some amount of accessibility.</p>
+
+<p><strong><em>"Inclusive design is good design."</em></strong></p>
       </section>
     </div>
 
