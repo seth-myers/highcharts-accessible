@@ -22,7 +22,7 @@ Include the [export-csv.js](http://www.highcharts.com/plugin-registry/single/7/E
 Import this plugin after `highcharts.js` and `export-csv.js`, like this:
 ```
 <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
-<script type="text/javascript" src="includes/export-csv.js"></script>
+<script type="text/javascript" src="export-csv.js"></script>
 <script type="text/javascript" src="highcharts-accessible.js"></script>
 ```
 ## Usage
