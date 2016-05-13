@@ -3,6 +3,8 @@ This plugin improves accessibility of the graphs rendered by Highcharts.
 Full documenation at http://seth-myers.github.io/highcharts-accessible/
 
 ## About
+**This only works with bar, column, line and pie charts so far. Will be adding more chart types later.**
+
 It works by automatically applying three best practices for accessible SVGs.
 
 1. Automatically creates and inserts intelligent title and description tags.
