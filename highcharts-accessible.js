@@ -233,7 +233,7 @@
 	// add desc and title tags with ARIA attributres, add lang attibute to SVG
     function setTags(tTag, dTag, chartData, userOptions){
 
-    	console.log(userOptions);
+    	//console.log(userOptions);
 
     	var chartID = chartData.renderTo.id;
 		var theSVG = document.getElementById(chartID).firstChild.firstChild; 
