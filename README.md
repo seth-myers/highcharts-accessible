@@ -28,7 +28,7 @@ Import this plugin after `highcharts.js` and `export-csv.js`, like this:
 <script type="text/javascript" src="highcharts-accessible.js"></script>
 ```
 ## Usage
-All parameters are optional, but `accessible settings: {}` must be called in order to run the plugin.
+All parameters are optional, but `accessibleSettings: {}` must be called in order to run the plugin.
 ```javascript
 $("#container").highcharts({  
   accessibleSettings: {  
