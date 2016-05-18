@@ -179,9 +179,12 @@
     	var theReturn = [];
     	var chartSeries = get(d, 'chart.type');
 
-    	for(var val of d.series) {
-    		if(val.seires){
-    			theReturn.push(val.series)
+    	for(var i=0; i<d.series.length; i++) {
+
+    		var seriesString = 'd.series[' + i + '].type';
+
+    		if( get(d, seriesString) ){
+    			theReturn.push(d.series[i].type)
     		} else if(chartSeries) {
     			theReturn.push(chartSeries)
     		} else {
