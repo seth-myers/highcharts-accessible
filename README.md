@@ -1,6 +1,7 @@
 # highcharts-accessible
 This plugin improves accessibility of the graphs rendered by Highcharts.  
-Full documenation at http://seth-myers.github.io/highcharts-accessible/
+Full documenation at http://seth-myers.github.io/highcharts-accessible/  
+Live example at http://seth-myers.com/highcharts-accessible/
 
 ## About
 **This only works with bar, column, line and pie charts so far. Will be adding more chart types later.**
